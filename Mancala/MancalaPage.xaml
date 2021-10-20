@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage xmlns:my1="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"  
+    x:Class="Mancala.MancalaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Mancala" >
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="80" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <my:CupControl x:Name="their1Cup" Grid.Row="0" Grid.Column="1" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="8" />
+        <my:CupControl x:Name="their2Cup" Grid.Row="0" Grid.Column="2" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="9" />
+        <my:CupControl x:Name="their3Cup" Grid.Row="0" Grid.Column="3" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="10" />
+        <my:CupControl x:Name="their4Cup" Grid.Row="0" Grid.Column="4" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="11" />
+        <my:CupControl x:Name="their5Cup" Grid.Row="0" Grid.Column="5" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="12" />
+        <my:CupControl x:Name="their6Cup" Grid.Row="0" Grid.Column="6" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" ImageSource="Assets/leftarrow.png" IsEnabled="False" CupIndex="13" />
+        <my:CupControl x:Name="theirHomeCup" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Center" ImageSource="Assets/home.png" IsEnabled="False" CupIndex="7" />
+        <my:CupControl x:Name="my6Cup" Grid.Row="2" Grid.Column="1" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="6" />
+        <my:CupControl x:Name="my5Cup" Grid.Row="2" Grid.Column="2" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="5" />
+        <my:CupControl x:Name="my4Cup" Grid.Row="2" Grid.Column="3" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="4" />
+        <my:CupControl x:Name="my3Cup" Grid.Row="2" Grid.Column="4" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="3" />
+        <my:CupControl x:Name="my2Cup" Grid.Row="2" Grid.Column="5" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="2" />
+        <my:CupControl x:Name="my1Cup" Grid.Row="2" Grid.Column="6" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Bottom" Click="OnCupClicked" ImageSource="Assets/rightarrow.png" CupIndex="1" />
+        <my:CupControl x:Name="myHomeCup" Grid.Row="0" Grid.Column="7" Grid.RowSpan="3" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" VerticalContentAlignment="Center" ImageSource="Assets/home.png" IsEnabled="False" />
+
+        <my1:AdControl x:Name="adBlock" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="8" Width="480" Height="80" VerticalAlignment="Center" HorizontalAlignment="Center" ApplicationId="9afb87c1-b2d2-4822-af5e-3c4e02a3b2d9" AdUnitId="57058" />
+
+        <my:StatusControl Text="YOUR MOVE" x:Name="statusBlock" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="8" Width="480" Height="80" Visibility="Collapsed" />
+        
+        <Button Style="{StaticResource RoundedButton}" Grid.Column="1" Grid.Row="1" Width="60" HorizontalAlignment="Left" Name="newGameButton" Click="newGameButton_Click">
+            <Image Source="Assets/newgame.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
+        </Button>
+        <Button Style="{StaticResource RoundedButton}" Grid.Column="6" Grid.Row="1" Width="60" HorizontalAlignment="Right" Name="helpButton" Click="helpButton_Click">
+            <Image Source="Assets/help.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" />
+        </Button>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="AppBar"  IsVisible="False" IsMenuEnabled="True" Opacity="0.5">
+            <shell:ApplicationBarIconButton IconUri="/Assets/appbar.refresh.rest.png" Text="New Game" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/appbar.close.rest.png" Text="Quit"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    -->
+
+</phone:PhoneApplicationPage>

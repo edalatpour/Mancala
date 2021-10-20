@@ -1,0 +1,64 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Mancala.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="728"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <controls:Pivot Title="MANCALA" Foreground="White">
+
+            <controls:PivotItem Header="rate &amp; review">
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+
+                    <TextBlock TextWrapping="Wrap" Text="If you enjoy playing Mancala, please let me know and give it 5 stars." HorizontalAlignment="Center" Margin="10" />
+
+                    <Button x:Name="RateButton" Style="{StaticResource RoundedButton}" Content="Rate &amp; Review" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Padding="0" Width="240" Height="80" Click="RateButton_Click" />
+
+                    <Button x:Name="OtherAppsButton" Style="{StaticResource RoundedButton}" Content="My Other Apps" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Padding="0" Width="240" Height="80" Click="OtherAppsButton_Click" />
+
+                </StackPanel>
+
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="how to play">
+
+                <StackPanel Grid.Row="1" Margin="12,12,12,12" >
+
+                    <TextBlock Text="1. The board is made up of two rows of six &quot;cups&quot; each." TextWrapping="Wrap" />
+
+                    <TextBlock Text="2. Four &quot;stones&quot; are placed in each of the 12 cups." TextWrapping="Wrap" />
+
+                    <TextBlock Text="3. Each player has a &quot;home cup&quot; to the right side of the cups." TextWrapping="Wrap" />
+
+                    <TextBlock Text="4. On your move, tap one of the cups on your side of the board to pick up all the stones from that cup." TextWrapping="Wrap" />
+
+                    <TextBlock Text="5. Moving counter-clockwise, one stone is deposited in each cup (including your own home cup) until the stones run out." TextWrapping="Wrap" />
+
+                    <TextBlock Text="6. If the last stone lands in an empty cup on your side of the board, you capture that stone and any stones in the cup directly opposite, and place them in your home cup." TextWrapping="Wrap" />
+
+                    <TextBlock Text="7. If the last stone lands in your home cup, you get an extra move." TextWrapping="Wrap" />
+
+                    <TextBlock Text="8. Play alternates until all six cups on one side of the board are empty. Whoever has the most stones in their home cup wins the game." TextWrapping="Wrap" />
+
+                </StackPanel>
+
+            </controls:PivotItem>
+
+        </controls:Pivot>
+
+    </Grid>
+ 
+</phone:PhoneApplicationPage>

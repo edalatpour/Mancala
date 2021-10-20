@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Mancala.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:Mancala">
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="500" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Grid.Row="1" Stroke="{StaticResource PhoneBorderBrush}" Width="340" Height="440" RadiusX="40" RadiusY="40" StrokeThickness="20"></Rectangle>
+
+        <Grid Grid.Row="1" Margin="20" Width="300" Height="400" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Red" StrokeThickness="20" RadiusX="20" RadiusY="20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Red" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="2" Grid.Column="1" Stroke="Orange" StrokeThickness="20" RadiusX="20" RadiusY="20" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Orange" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="2" Grid.Column="2" Stroke="Yellow" StrokeThickness="20" RadiusX="20" RadiusY="20" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Yellow" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="3" Grid.Column="0" Stroke="Green" StrokeThickness="20" RadiusX="20" RadiusY="20" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Green" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="3" Grid.Column="1" Stroke="Blue" StrokeThickness="20" RadiusX="20" RadiusY="20" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Blue" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="3" Grid.Column="2" Stroke="Purple" StrokeThickness="20" RadiusX="20" RadiusY="20" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Purple" Opacity="0.5" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <TextBlock Grid.Row="2" Text="MANCALA" FontSize="72" FontWeight="Normal" Foreground="{StaticResource PhoneBorderBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button  Style="{StaticResource RoundedButton}" Content="START" Name="StartButton" Grid.Row="3" Click="StartButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Width="160" Height="80" IsEnabled="True" />
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
